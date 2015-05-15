@@ -1,12 +1,13 @@
 {
-  "name": "Lab3",
+  "name": "Postgres-example",
   "version": "0.0.1",
   "description": "Lab demonstrating use of postgres on Heroku",
   "engines": {
-    "node": "0.10.26"
+    "node": "0.10.x"
   },
   "dependencies": {
-    "express": "^3.5.1",
-    "pg": "^3.0.3"
+    "express": "^4.12.3",
+    "pg": "^4.3.0",
+    "pg-native": "^1.8.1"
   }
 }
