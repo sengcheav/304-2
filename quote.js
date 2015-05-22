@@ -2,8 +2,9 @@ var express = require('express');
 
 // added cors
 var app = express()
+,bodyParser = require('body-parser')
 	, pg = require('pg').native
-   ,bodyParser = require('body-parser')	
+  // ,bodyParser = require('body-parser')	
    , connectionString = process.env.DATABASE_URL
    , cors = require('cors')
 	, port = process.env.PORT
