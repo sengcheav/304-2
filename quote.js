@@ -20,7 +20,7 @@ var quotes = [
 ];
 
 // make express handle JSON and other requests
-jsonParser = app.use(bodyParser.json());
+app.use(bodyParser.json());
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
@@ -55,7 +55,7 @@ app.get('/quote/:id', function(req, res) {
 });
 
 
-app.post('/quote',jsonParser ,  function(req, res) {
+app.post('/quote',  function(req, res) {
   var position =0 ;
   console.log("Im here ");
   console.log(req.body);
