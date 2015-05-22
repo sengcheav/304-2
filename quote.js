@@ -1,6 +1,6 @@
 // use the express middleware
-var express = require('express');
-, pg = require('pg').native
+var express = require('express')
+  , pg = require('pg').native
   , connectionString = process.env.DATABASE_URL
   , start = new Date()
   , port = process.env.PORT
