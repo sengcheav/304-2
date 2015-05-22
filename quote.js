@@ -68,9 +68,9 @@ app.post('/quote', function(req, res) {
     text : req.body.text
   };
   
- newQuote.pos = quotes.length;
+newQuote.pos = quotes.length;
 console.log("FK");
- query = client.query('SELECT COUNT(id) AS COUNT FROM quote');
+query = client.query('SELECT COUNT(id) AS COUNT FROM quote');
     query.on('row', function( err, result) { 
     	if(err) {console.log (err);console.log("ERR"); }
     	else { console.log ("FK heroku") ;
