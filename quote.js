@@ -9,7 +9,7 @@ var app = express()
 	, port = process.env.PORT
   	, client;
 
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 client = new pg.Client(connectionString);
 client.connect();
 var quotes = [
@@ -18,9 +18,9 @@ var quotes = [
   { author : 'Unknown', text : "Even the greatest was once a beginner. Don’t be afraid to take that first step."},
   { author : 'Neale Donald Walsch', text : "You are afraid to die, and you’re afraid to live. What a way to exist."}
 ];
-
+app.user(express.json());
 // make express handle JSON and other requests
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
