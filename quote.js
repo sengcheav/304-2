@@ -3,6 +3,7 @@ var express = require('express');
 // added cors
 var app = express()
 	, pg = require('pg').native
+   ,bodyParser = require('body-parser')	
    , connectionString = process.env.DATABASE_URL
    , cors = require('cors')
 	, port = process.env.PORT
@@ -19,7 +20,7 @@ var quotes = [
 ];
 
 // make express handle JSON and other requests
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
