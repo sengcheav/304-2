@@ -26,12 +26,12 @@ var quotes = [
 
 // make sure we can parse JSON
 app.use(bodyParser.json());
-app.get('/', function(req, res) {
-  var date = new Date();
+//app.get('/', function(req, res) {
+  //var date = new Date();
 
-  client.query('INSERT INTO visits(date) VALUES($1)', [date]);
-  app.sendfile(index.html);
-});
+  //client.query('INSERT INTO visits(date) VALUES($1)', [date]);
+  //app.sendfile(index.html);
+//});
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
