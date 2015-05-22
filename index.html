@@ -51,8 +51,7 @@ $(document).bind('pageinit', function() {
     alert("Fetching result from "+jsonUrl);
     $.get(jsonUrl, function(data) {
       alert(data.author);
-      $("#result").html("<p><b>"+data.author+" said 
-"+data.text+"</b></p>")
+      $("#result").html("<p><b>"+data.author+" said "+data.text+"</b></p>")
     }, 'json');
   });
   $( "#button2" ).bind( "click", function(event, ui) {
@@ -60,8 +59,7 @@ $(document).bind('pageinit', function() {
     var jsonUrl = "https://arcane-sands-5903.herokuapp.com/quote";
     var newQuote = { "author" : "foo", "text" : "some text" };
     $.post(jsonUrl,newQuote, function(data) {
-      alert("Added quote number " + data.pos + " " + data.author + " " + 
-data.text);
+      alert("Added quote number " + data.pos + " " + data.author + " " + data.text);
     }, 'json');
   });
 });
