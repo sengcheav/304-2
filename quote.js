@@ -5,6 +5,10 @@ var express = require('express')
   , start = new Date()
   , port = process.env.PORT
   , client;
+
+client = new pg.Client(connectionString);
+client.connect();
+
 // make express handle JSON and other requests
 var bodyParser = require('body-parser');
 
@@ -14,8 +18,8 @@ var cors = require('cors');
 // instantiate app
 var app = express();
 
-client = new pg.Client(connectionString);
-client.connect();
+//client = new pg.Client(connectionString);
+//client.connect();
 
 var quotes = [
   { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
@@ -26,12 +30,7 @@ var quotes = [
 
 // make sure we can parse JSON
 app.use(bodyParser.json());
-//app.get('/', function(req, res) {
-  //var date = new Date();
 
-  //client.query('INSERT INTO visits(date) VALUES($1)', [date]);
-  //app.sendfile(index.html);
-//});
 // serve up files from this directory 
 app.use(express.static(__dirname));
 // make sure we use CORS to avoid cross domain problems
