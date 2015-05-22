@@ -9,7 +9,7 @@ var app = express()
 	, port = process.env.PORT
   	, client;
 
-
+var bodyParser = require('body-parser');
 client = new pg.Client(connectionString);
 client.connect();
 var quotes = [
