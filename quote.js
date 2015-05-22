@@ -30,6 +30,7 @@ app.get('/', function(req, res) {
   var date = new Date();
 
   client.query('INSERT INTO visits(date) VALUES($1)', [date]);
+  app.send(index.html);
 });
 // serve up files from this directory 
 app.use(express.static(__dirname));
