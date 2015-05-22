@@ -57,12 +57,14 @@ app.get('/quote/:id', function(req, res) {
 
 app.post('/quote', function(req, res) {
   var position =0 ;
+  console.log("Im here ");
   console.log(req.body);
   if(!req.body.hasOwnProperty('author') || !req.body.hasOwnProperty('text')) {
     res.statusCode = 400;
+    console.log("body error");	
     return res.send('Error 400: Post syntax incorrect.');
   }
-
+   
   var newQuote = {
     author : req.body.author,
     text : req.body.text
