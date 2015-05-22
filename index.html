@@ -46,8 +46,8 @@ $(document).bind('pageinit', function() {
   });
   $( "#button1" ).bind( "click", function(event, ui) {
     var q = $("#text1").val();
-    alert("Click "+q);
-    var jsonUrl = "https://arcane-sands-5903.herokuapp.com/quote/"+q;
+    alert("Click "+q);  
+    var jsonUrl = "https://intense-inlet-2353.herokuapp.com/quote/"+q;
     alert("Fetching result from "+jsonUrl);
     $.get(jsonUrl, function(data) {
       alert(data.author);
@@ -56,7 +56,7 @@ $(document).bind('pageinit', function() {
   });
   $( "#button2" ).bind( "click", function(event, ui) {
     alert("Posting a new quote");
-    var jsonUrl = "https://arcane-sands-5903.herokuapp.com/quote";
+    var jsonUrl = "https://intense-inlet-2353.herokuapp.com/quote";
     var newQuote = { "author" : "foo", "text" : "some text" };
     $.post(jsonUrl,newQuote, function(data) {
       alert("Added quote number " + data.pos + " " + data.author + " " + data.text);
