@@ -12,7 +12,7 @@ var quotes = [
 
 client = new pg.Client(connectionString);
 client.connect();
-query = client.query ('drop table quote');
+//query = client.query ('drop table quote');
 query = client.query('CREATE TABLE quote (id int primary key , author varchar(20) not null , text text not null)');
 for ( var id = 0 ; id <4 ; id++){
 	
