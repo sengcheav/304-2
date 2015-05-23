@@ -54,7 +54,7 @@ $(document).bind('pageinit', function() {
       $("#result").html("<p><b>"+data.author+" said "+data.text+"</b></p>")
     }, 'json');
   });
-  $( "#button2" ).bind( "click", function(event, ui) {
+    $( "#button2" ).bind( "click", function(event, ui) {
     alert("Posting a new quote");
     var jsonUrl = "https://intense-inlet-2353.herokuapp.com/quote";
     var newQuote = { "author" : "foo", "text" : "some text" };
@@ -62,6 +62,7 @@ $(document).bind('pageinit', function() {
       alert("Added quote number " + data.pos + " " + data.author + " " + data.text);
     }, 'json');
   });
+
 });
 </script>
 </body>
